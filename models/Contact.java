@@ -87,5 +87,4 @@ public class Contact {
         "Birth Date: " + this.birthDate + "\n" +       
         "Age: " + this.age + " year old\n");
     }
-
 }
