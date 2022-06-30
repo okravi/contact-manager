@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.text.ParseException;
 import java.util.Scanner;
 
@@ -64,12 +63,16 @@ public class Main {
                     System.out.print("\tBirth Date: ");
                     String bd = scan.nextLine();
 
-                    try {
-                        cm.addContact(new Contact(name, bd, phone));
-                    } catch (ParseException e) {
-                        System.out.println("Input string is not parseable");
-                    } finally {
-                        System.out.println( "\n\nUPDATED CONTACTS\n\n" + cm);
+                    if ((name.isBlank()) || (phone.isBlank()) || (phone.length()<5)){
+                        System.out.println("The input uou provided is not valid");
+                    }else{
+                        try {
+                            cm.addContact(new Contact(name, bd, phone));
+                        } catch (ParseException e) {
+                            System.out.println("Input string is not parseable");
+                        } finally {
+                            System.out.println( "\n\nUPDATED CONTACTS\n\n" + cm);
+                        }
                     }
                     
                 break;

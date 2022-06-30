@@ -2,8 +2,6 @@ package models;
 
 import java.util.ArrayList;
 
-import java.util.ArrayList;
-
 public class ContactManager {
     ArrayList<Contact> contacts;
 

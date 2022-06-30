@@ -12,7 +12,10 @@ public class Contact {
     private String birthDate;
     private String phoneNumber;
 
-    public Contact (String name, String birthDate, String phoneNumber) throws ParseException{
+    public Contact (String name, 
+    String birthDate, 
+    String phoneNumber) throws ParseException, IllegalArgumentException {
+
         if ((name == null) || (name.isBlank())) {
             throw new IllegalArgumentException 
             ("Name shouldn't be blank");
@@ -78,7 +81,7 @@ public class Contact {
         long ageMilli = date.getTime() - bdi;
         long ageYears = TimeUnit.MILLISECONDS.toDays(ageMilli)/365;
         
-        return((int)ageYears);
+        return((int)ageYears);  
     }
 
     public String toString() {
@@ -87,4 +90,5 @@ public class Contact {
         "Birth Date: " + this.birthDate + "\n" +       
         "Age: " + this.age + " year old\n");
     }
+    
 }
